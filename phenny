@@ -14,7 +14,7 @@ Then run ./phenny again
 import sys, os, imp, optparse
 from textwrap import dedent as trim
 
-dotdir = os.path.expanduser('~/.phenny')
+dotdir = ('settings')
 
 def check_python_version(): 
    if sys.version_info < (2, 4): 
