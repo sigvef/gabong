@@ -72,7 +72,7 @@ def g(phenny, input):
    else: phenny.reply("No results found for '%s'." % query)
 g.commands = ['g']
 g.priority = 'high'
-g.example = '.g swhack'
+g.example = '!g swhack'
 
 def oldgc(phenny, input): 
    """Returns the number of Google results for the specified input."""
@@ -83,7 +83,7 @@ def oldgc(phenny, input):
    num = formatnumber(google_count(query))
    phenny.say(query + ': ' + num)
 oldgc.commands = ['ogc', 'oldgc']
-oldgc.example = '.oldgc extrapolate'
+oldgc.example = '!oldgc extrapolate'
 
 r_query = re.compile(
    r'\+?"[^"\\]*(?:\\.[^"\\]*)*"|\[[^]\\]*(?:\\.[^]\\]*)*\]|\S+'
@@ -128,7 +128,7 @@ def bing(phenny, input):
       lang = lang[1:]
    else: lang = 'en-GB'
    if not query:
-      return phenny.reply('.bing what?')
+      return phenny.reply('!bing what?')
 
    query = query.encode('utf-8')
    uri = bing_search(query, lang)
@@ -139,7 +139,7 @@ def bing(phenny, input):
       phenny.bot.last_seen_uri[input.sender] = uri
    else: phenny.reply("No results found for '%s'." % query)
 bing.commands = ['bing']
-bing.example = '.bing swhack'
+bing.example = '!bing swhack'
 
 r_duck = re.compile(r'nofollow" class="[^"]+" href="(.*?)">')
 
@@ -153,7 +153,7 @@ def duck_search(query):
 
 def duck(phenny, input): 
    query = input.group(2)
-   if not query: return phenny.reply('.ddg what?')
+   if not query: return phenny.reply('!ddg what?')
 
    query = query.encode('utf-8')
    uri = duck_search(query)
@@ -243,7 +243,7 @@ def ngc(phenny, input):
 
 ngc.commands = ['ngc']
 ngc.priority = 'high'
-ngc.example = '.ngc extrapolate'
+ngc.example = '!ngc extrapolate'
 
 def gc(phenny, input):
    if not input.group(2):
@@ -259,7 +259,7 @@ def gc(phenny, input):
 
 gc.commands = ['gc']
 gc.priority = 'high'
-gc.example = '.gc extrapolate'
+gc.example = '!gc extrapolate'
 
 if __name__ == '__main__': 
    print __doc__.strip()

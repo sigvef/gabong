@@ -63,9 +63,9 @@ def calc(phenny, input):
 
       phenny.say(q + ' = ' + result[:350])
    else: phenny.reply("Sorry, can't calculate that.")
-   phenny.say('Note that .calc is deprecated, consider using .c')
+   phenny.say('Note that !calc is deprecated, consider using !c')
 calc.commands = ['calc']
-calc.example = '.calc 5 + 3'
+calc.example = '!calc 5 + 3'
 
 def c(phenny, input): 
    """Google calculator."""
@@ -89,7 +89,7 @@ def c(phenny, input):
       phenny.say(answer)
    else: phenny.say('Sorry, no result.')
 c.commands = ['c']
-c.example = '.c 5 + 3'
+c.example = '!c 5 + 3'
 
 def py(phenny, input): 
    query = input.group(2).encode('utf-8')

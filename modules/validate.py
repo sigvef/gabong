@@ -37,7 +37,7 @@ def val(phenny, input):
 
    phenny.reply(result)
 val.rule = (['val'], r'(?i)(\S+)')
-val.example = '.val http://www.w3.org/'
+val.example = '!val http://www.w3.org/'
 
 if __name__ == '__main__': 
    print __doc__.strip()

@@ -32,8 +32,8 @@ commands.priority = 'low'
 
 def help(phenny, input): 
    response = (
-      'Hi, I\'m a bot. Say ".commands" to me in private for a list ' + 
-      'of my commands, or see http://inamidst.com/phenny/ for more ' + 
+      'Hi, I\'m a bot. Say "!commands" to me in private for a list ' + 
+      'of my commands, or see http://github.com/sigvef/gabong/ for more ' + 
       'general details. My owner is %s.'
    ) % phenny.config.owner
    phenny.reply(response)

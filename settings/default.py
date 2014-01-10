@@ -4,3 +4,4 @@ channels = ['#gabong']
 owner = 'sigveseb'
 admins = [owner]
 exclude = []
+prefix = '!'

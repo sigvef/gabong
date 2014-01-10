@@ -11,7 +11,7 @@ import time
 from tools import deprecated
 
 def seen(phenny, input): 
-   """.seen <nick> - Reports when <nick> was last seen."""
+   """!seen <nick> - Reports when <nick> was last seen."""
    nick = input.group(2)
    if not nick:
       return phenny.reply("Need a nickname to search for...")

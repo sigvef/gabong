@@ -96,7 +96,7 @@ def o(phenny, input):
             return phenny.reply('Sorry, %s is blacklisted' % command)
    service(phenny, input, command, args)
 o.commands = ['o']
-o.example = '.o servicename arg1 arg2 arg3'
+o.example = '!o servicename arg1 arg2 arg3'
 o.services = {}
 o.serviceURI = None
 

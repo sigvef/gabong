@@ -16,9 +16,9 @@ def join(phenny, input):
       if not key: 
          phenny.write(['JOIN'], channel)
       else: phenny.write(['JOIN', channel, key])
-join.rule = r'\.join (#\S+)(?: *(\S+))?'
+join.rule = r'\!join (#\S+)(?: *(\S+))?'
 join.priority = 'low'
-join.example = '.join #example or .join #example key'
+join.example = '!join #example or !join #example key'
 
 def part(phenny, input): 
    """Part the specified channel. This is an admin-only command."""
@@ -28,7 +28,7 @@ def part(phenny, input):
       phenny.write(['PART'], input.group(2))
 part.commands = ['part']
 part.priority = 'low'
-part.example = '.part #example'
+part.example = '!part #example'
 
 def quit(phenny, input): 
    """Quit from the server. This is an owner-only command."""

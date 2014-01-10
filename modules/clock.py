@@ -245,7 +245,7 @@ def f_time(self, origin, match, args):
          self.msg(origin.sender, msg)
 f_time.commands = ['t']
 f_time.name = 't'
-f_time.example = '.t UTC'
+f_time.example = '!t UTC'
 
 def beats(phenny, input): 
    """Shows the internet time in Swatch beats."""

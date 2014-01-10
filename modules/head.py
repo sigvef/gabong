@@ -35,7 +35,7 @@ def head(phenny, input):
    if not isinstance(info, list): 
       try: info = dict(info)
       except TypeError: 
-         return phenny.reply('Try .head http://example.org/ [optional header]')
+         return phenny.reply('Try !head http://example.org/ [optional header]')
       info['Status'] = '200'
    else: 
       newInfo = dict(info[0])
@@ -63,7 +63,7 @@ def head(phenny, input):
          msg = 'There was no %s header in the response.' % header
          phenny.say(msg)
 head.commands = ['head']
-head.example = '.head http://www.w3.org/'
+head.example = '!head http://www.w3.org/'
 
 r_title = re.compile(r'(?ims)<title[^>]*>(.*?)</title\s*>')
 r_entity = re.compile(r'&[A-Za-z0-9#]+;')

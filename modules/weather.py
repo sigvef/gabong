@@ -70,13 +70,13 @@ def code(phenny, search):
 
 @deprecated
 def f_weather(self, origin, match, args): 
-   """.weather <ICAO> - Show the weather at airport with the code <ICAO>."""
+   """!weather <ICAO> - Show the weather at airport with the code <ICAO>."""
    if origin.sender == '#talis': 
-      if args[0].startswith('.weather '): return
+      if args[0].startswith('!weather '): return
 
    icao_code = match.group(2)
    if not icao_code: 
-      return self.msg(origin.sender, 'Try .weather London, for example?')
+      return self.msg(origin.sender, 'Try !weather London, for example?')
 
    icao_code = code(self, icao_code)
 
