@@ -71,7 +71,7 @@ r_entity = re.compile(r'&[A-Za-z0-9#]+;')
 @deprecated
 def f_title(self, origin, match, args): 
    """.title <URI> - Return the title of URI."""
-   uri = match.group(2)
+   uri = match.group(1)
    uri = (uri or '').encode('utf-8')
 
    if not uri and hasattr(self, 'last_seen_uri'): 
@@ -175,7 +175,7 @@ def f_title(self, origin, match, args):
       title = title.replace('\r', '')
       self.msg(origin.sender, origin.nick + ': ' + title)
    else: self.msg(origin.sender, origin.nick + ': No title found')
-f_title.commands = ['title']
+f_title.rule = r'.*(http[s]?://[^<> "\x01]+)[,.]?'
 
 def noteuri(phenny, input): 
    uri = input.group(1).encode('utf-8')
