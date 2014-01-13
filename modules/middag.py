@@ -1,5 +1,6 @@
 import requests
 import datetime
+from color import colorize, orange, grey, green
 
 
 def middag(phenny, input):
@@ -21,8 +22,15 @@ def middag(phenny, input):
         return data[week_number][week_day]
 
     for campus in 'Hangaren', 'Realfag':
-        phenny.say('_' + campus + '_: ' +
-                   ' | '.join(filter(lambda x: x,
-                              get_menu_for_campus(campus).split('\n'))))
+        text = grey(' | ').join(
+            filter(lambda x: x,
+                   get_menu_for_campus(campus)
+                   .replace(':', '')
+                   .split('\n')
+                   ))
+        text = green(campus) + ': ' + text
+        text = colorize(text, '\([GLV][,GLV]*\)', grey)
+        text = colorize(text, ' \d+,-', orange)
+        phenny.say(text)
 
 middag.commands = ['middag']
