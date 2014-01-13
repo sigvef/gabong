@@ -6,6 +6,7 @@ import re
 import datetime
 from xml.dom import minidom
 import random
+from color import colorize, pink, cyan, grey
 
 def weekday(i):
 	return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][i]
@@ -25,6 +26,11 @@ def yr(phenny,input):
 			i = i+1;
 			if i > 7:
 				i=0
-		phenny.say(stringtosay[0:len(stringtosay)-3])
+		stringtosay = stringtosay[0:len(stringtosay)-3]
+		stringtosay = colorize(stringtosay, '[^-]\d+.C', pink)
+		stringtosay = colorize(stringtosay, '-\d+.C', cyan)
+		stringtosay = colorize(stringtosay, '[MTWFS][^ ]*day -', grey)
+		stringtosay = colorize(stringtosay, '\|', grey)
+		phenny.say(stringtosay)
 
 yr.commands = ['yr']
